@@ -1,0 +1,492 @@
+/*
+ * Brodie Leiser - Mechanical Engineering Portfolio | v3.0
+ * Design System: Editorial & Asymmetrical
+ * Aesthetic: Apple/Google/Stripe-Standard Minimalist
+ */
+
+:root {
+    /* Colors - High Contrast, Professional Palette */
+    --primary-text: #1d1d1f;
+    --secondary-text: #515154;
+    --tertiary-text: #86868b;
+    --bg-color: #ffffff;
+    --subtle-bg: #f9f9f9;
+    --border-color: #e5e5e5;
+    --accent-blue: #007aff;
+
+    /* Typography - Inter (as per Google Fonts link in HTML) */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    
+    /* 8pt Grid Spacing System */
+    --unit: 8px;
+    --space-xs: calc(var(--unit) * 1);   /* 8px */
+    --space-sm: calc(var(--unit) * 2);   /* 16px */
+    --space-md: calc(var(--unit) * 4);   /* 32px */
+    --space-lg: calc(var(--unit) * 8);   /* 64px */
+    --space-xl: calc(var(--unit) * 12);  /* 96px */
+    --space-xxl: calc(var(--unit) * 16); /* 128px */
+
+    /* Transitions & Animations */
+    --transition-cubic: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-ease: all 0.3s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* ====================================
+   Typography & Global Elements
+   ==================================== */
+
+h1, h2, h3 {
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin: 0;
+}
+
+p {
+    margin: 0 0 var(--space-sm) 0;
+    max-width: 65ch;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.prose {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    font-size: 18px;
+    color: var(--secondary-text);
+}
+
+.prose strong {
+    color: var(--primary-text);
+    font-weight: 600;
+}
+
+/* ====================================
+   Main Header
+   ==================================== */
+
+.site-header {
+    width: 100%;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-identity .name-headline {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* 24px - 32px */
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.header-identity .major-subheadline {
+    font-size: clamp(0.9rem, 2vw, 1rem); /* 14px - 16px */
+    color: var(--secondary-text);
+    margin: 4px 0 0 0;
+}
+
+.header-navigation {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.header-navigation a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-weight: 600;
+    font-size: 16px;
+    transition: var(--transition-ease);
+}
+
+.header-navigation a:hover {
+    color: var(--primary-text);
+}
+
+.header-social-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.social-link {
+    color: var(--tertiary-text);
+    transition: var(--transition-ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: var(--primary-text);
+    transform: translateY(-2px);
+}
+
+/* ====================================
+   Main Content & Section Layout
+   ==================================== */
+
+.main-content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.content-section {
+    padding: var(--space-xxl) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-label {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary-text);
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 40px - 64px */
+    max-width: 12ch;
+    margin-bottom: var(--space-lg);
+}
+
+/* ====================================
+   Asymmetrical Grid System
+   ==================================== */
+
+.asym-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.asym-grid .grid-item.text-content {
+    grid-column: 1 / span 5;
+}
+
+.asym-grid .grid-item.image-placeholder-wrapper {
+    grid-column: 6 / span 7;
+}
+
+/* Inverted Layout Modifier */
+.asym-grid.layout-inverted .grid-item.text-content {
+    grid-column: 8 / span 5;
+}
+
+.asym-grid.layout-inverted .grid-item.image-placeholder-wrapper {
+    grid-column: 1 / span 7;
+}
+
+.image-placeholder-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background-color: var(--subtle-bg);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--space-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Loading State Shimmer */
+.image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200%); }
+}
+
+/* ====================================
+   Portfolio Showcase
+   ==================================== */
+
+.portfolio-showcase .section-header-centered {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-xl) auto;
+}
+
+.portfolio-showcase .section-header-centered .section-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-item {
+    padding: var(--space-lg) 0;
+}
+
+.project-tag {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-blue);
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.project-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28px - 40px */
+    margin-bottom: var(--space-md);
+}
+
+/* ====================================
+   Contact CTA
+   ==================================== */
+
+.contact-cta {
+    text-align: center;
+    padding: var(--space-xxl) 0;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* 40px - 72px */
+    margin-bottom: var(--space-sm);
+}
+
+.contact-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem); /* 16px - 20px */
+    color: var(--secondary-text);
+    margin: 0 auto var(--space-lg) auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-text);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: var(--transition-ease);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================================
+   Site Footer
+   ==================================== */
+
+.site-footer {
+    width: 100%;
+    background: var(--subtle-bg);
+    border-top: 1px solid var(--border-color);
+    padding: var(--space-lg) 0;
+    margin-top: var(--space-xl);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-brand .footer-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+}
+
+.footer-brand .footer-copyright {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin: 0;
+}
+
+.footer-navigation {
+    display: flex;
+    gap: var(--space-xl);
+}
+
+.footer-link-group h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary-text);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-link-group a {
+    display: block;
+    text-decoration: none;
+    color: var(--secondary-text);
+    margin-bottom: var(--space-xs);
+    transition: var(--transition-ease);
+}
+
+.footer-link-group a:hover {
+    color: var(--primary-text);
+}
+
+
+/* ====================================
+   Scroll Reveal Animations
+   ==================================== */
+
+/* Initial state for elements that will be revealed */
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-loaded .reveal-left {
+    transform: translateX(-40px);
+}
+
+.js-loaded .reveal-right {
+    transform: translateX(40px);
+}
+
+/* Visible state when class is added by JS */
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger animation for children inside a portfolio item */
+.portfolio-item.is-visible .reveal-left,
+.portfolio-item.is-visible .reveal-right {
+    transition-delay: 0.25s;
+}
+
+/* ====================================
+   Responsive Media Queries
+   ==================================== */
+
+@media (max-width: 992px) {
+    .asym-grid,
+    .asym-grid.layout-inverted {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: var(--space-lg);
+    }
+
+    .asym-grid .grid-item.text-content,
+    .asym-grid .grid-item.image-placeholder-wrapper,
+    .asym-grid.layout-inverted .grid-item.text-content,
+    .asym-grid.layout-inverted .grid-item.image-placeholder-wrapper {
+        grid-column: 1 / -1; /* Full width */
+    }
+
+    /* Ensure inverted content still flows correctly when stacked */
+    .asym-grid.layout-inverted .grid-item.text-content {
+        grid-row: 1;
+    }
+
+    .asym-grid.layout-inverted .grid-item.image-placeholder-wrapper {
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .prose { font-size: 16px; }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+    .header-navigation {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-social-links {
+        position: absolute;
+        top: var(--space-md);
+        right: var(--space-md);
+    }
+
+    .content-section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .footer-navigation {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+}

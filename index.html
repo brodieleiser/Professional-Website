@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brodie Leiser | Mechanical Engineering</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 
+      MODIFIED: Expanded, full-width header.
+      This replaces the previous compact navigation bar. It now serves as the primary hero element,
+      containing the main identity and top-level navigation, fulfilling the "prominent name" directive.
+    -->
+    <header class="site-header" id="home">
+        <div class="header-container">
+            <div class="header-identity">
+                <h1 class="name-headline">Brodie Leiser</h1>
+                <p class="major-subheadline">Mechanical Engineering | May 2026</p>
+            </div>
+            <nav class="header-navigation">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-social-links">
+                <a href="https://www.linkedin.com/in/" target="_blank" class="social-link" aria-label="LinkedIn Profile">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="/resume.pdf" target="_blank" class="social-link" aria-label="Download Resume">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-wrapper">
+
+        <!-- 
+          MODIFIED: Asymmetrical Grid Layout.
+          The 'About' section now uses a two-column grid. Text is on the left, and a dedicated 
+          visual placeholder is on the right, creating a dynamic, editorial-style layout.
+        -->
+        <section id="about" class="content-section">
+            <div class="asym-grid">
+                <div class="grid-item text-content reveal-left">
+                    <span class="section-label">Engineering Journey</span>
+                    <h2 class="section-title">Bridging Theoretical Physics with Practical Design</h2>
+                    <div class="prose">
+                        <p>As a University of Georgia Mechanical Engineering student, my focus is centered on the critical intersection of computational fluid dynamics (CFD) and structural optimization. I am driven by the challenge of translating complex theoretical physics into high-precision, tangible mechanical designs that solve real-world problems.</p>
+                        <p>My hands-on experience is primarily forged as an active contributor to <strong>UGA Motorsports</strong>. In this high-stakes environment, I specialize in aerodynamic profiling and ensuring vehicle structural integrity. Leveraging powerful engineering tools like SolidWorks for 3D modeling/FEA and MATLAB for complex simulations, I work with my team to develop and implement next-generation engineering solutions that push the boundaries of performance and safety.</p>
+                        <p>This synthesis of rigorous academic knowledge and competitive, practical application defines my engineering philosophy: innovate with purpose, design for performance, and build for reliability.</p>
+                    </div>
+                </div>
+                <div class="grid-item image-placeholder-wrapper reveal-right">
+                    <div class="image-placeholder" aria-label="Image placeholder for a personal photo or engineering diagram."></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          MODIFIED: Inverted and Alternating Portfolio Layout.
+          The portfolio is no longer a simple card grid. Each project is a feature in an asymmetrical layout.
+          The layout alternates for each project to create a more engaging, scannable, and editorial flow.
+        -->
+        <section id="portfolio" class="content-section portfolio-showcase">
+            <div class="section-header-centered">
+                <span class="section-label">Technical Showcase</span>
+                <h2 class="section-title">Selected CAD Designs &amp; Engineering Projects</h2>
+            </div>
+            
+            <div class="portfolio-item asym-grid reveal-item">
+                <div class="grid-item image-placeholder-wrapper reveal-left">
+                    <div class="image-placeholder" aria-label="CAD rendering of a high-pressure radial pump."></div>
+                </div>
+                <div class="grid-item text-content reveal-right">
+                    <span class="project-tag">SolidWorks &amp; FEA</span>
+                    <h3 class="project-title">High-Pressure Radial Pump</h3>
+                    <div class="prose">
+                        <p>This project involved a complete 3D assembly and subsequent stress analysis of a radial piston pump designed for high-pressure industrial hydraulic systems. The design process emphasized material selection for durability under extreme pressures and finite element analysis (FEA) to identify and mitigate potential failure points in the casing and piston assemblies. The final model was optimized for manufacturability and serviceability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item asym-grid layout-inverted reveal-item">
+                 <div class="grid-item text-content reveal-left">
+                    <span class="project-tag">Thermal Dynamics &amp; CFD</span>
+                    <h3 class="project-title">Cross-Flow Heat Exchanger Prototype</h3>
+                    <div class="prose">
+                        <p>Focused on the urgent need for efficient EV battery cooling, this project included the computational analysis, simulation, and physical prototyping of a novel cross-flow heat exchanger. Using CFD software, various fin geometries and flow path configurations were simulated to maximize the heat transfer coefficient. The final prototype, optimized for compact automotive applications, demonstrated a significant improvement in thermal dissipation over conventional models.</p>
+                    </div>
+                </div>
+                <div class="grid-item image-placeholder-wrapper reveal-right">
+                    <div class="image-placeholder" aria-label="Simulation graphic of a cross-flow heat exchanger."></div>
+                </div>
+            </div>
+
+            <div class="portfolio-item asym-grid reveal-item">
+                <div class="grid-item image-placeholder-wrapper reveal-left">
+                    <div class="image-placeholder" aria-label="3D model of an autonomous sorting robotic arm."></div>
+                </div>
+                <div class="grid-item text-content reveal-right">
+                    <span class="project-tag">Robotics &amp; Mechatronics</span>
+                    <h3 class="project-title">Autonomous Sorting Arm (4-DOF)</h3>
+                    <div class="prose">
+                        <p>This was a comprehensive mechanical design of a 4-degree-of-freedom (DOF) robotic arm for automated sorting tasks. The project featured custom-designed, 3D-printed structural components optimized for a high strength-to-weight ratio. Integration of servo motors with control logic, developed in a Python environment, allowed for precise and repeatable manipulation of objects, demonstrating a full-stack mechatronic system design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section / CTA -->
+        <section id="contact" class="contact-cta">
+            <div class="contact-content">
+                <h2 class="contact-title">Let's Engineer the Future.</h2>
+                <p class="contact-subtitle">I am actively seeking challenging internship and entry-level opportunities where I can apply my skills in mechanical design and analysis. Available for Summer 2025 and beyond.</p>
+                <a href="mailto:brodie.leiser@uga.edu" class="btn-primary">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-name">Brodie Leiser</h3>
+                <p class="footer-copyright">© 2024. Designed and engineered with precision.</p>
+            </div>
+            <div class="footer-navigation">
+                <div class="footer-link-group">
+                    <h4>Navigate</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Connect</h4>
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn</a>
+                    <a href="/resume.pdf" target="_blank">Resume</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body></html>
